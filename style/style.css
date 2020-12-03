@@ -1,7 +1,6 @@
 * {
     font-family: Arial, sans-serif;
 }
-
 body {
     background-color: lightgreen;
 }
@@ -10,21 +9,18 @@ body {
 #cabecalho {
     text-align: center;
 }
-
 #cabecalho h1 {
     margin: 5px;
     margin-top: 50px;
 }
-
 #listas {
-    width: 100px;
+    width: 150px;
     height: 30px;
     text-align-last: center;
     font-size: 16pt;
     border: 2px ridge green;
     outline-style: none;
 }
-
 #cabecalho button {
     width: 30px;
     height: 30px;
@@ -35,9 +31,69 @@ body {
     -webkit-transition: background-color 1s;
     -o-transition: background-color 1s;
 }
-
 #cabecalho button:hover {
     background-color: rgba(0, 0, 0, .7);
 }
-
 /*FIM EDIÇÃO CABEÇALHO*/
+
+/* EDIÇÃO CORPO*/
+#corpo {
+    background-color: rgba(243, 243, 243,.8);
+    margin: auto;
+    margin-top: 40px;
+    padding: 15px;
+    width: 70%;
+    border-radius: 20px 0 20px 0;
+}
+#corpo header {
+    text-align: center;
+}
+#textoentrada {
+    font-size: 18pt;
+    border: 2px ridge white;
+    outline-style: none;
+}
+#acaoentrada{
+    font-size: 18pt;
+    border: 2px ridge white;
+    outline-style: none;
+    background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
+}
+#acaoentrada:hover {
+    background-color: rgba(0, 0, 0, .7);
+}
+#corpo section {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+p {
+    margin: 0;
+    font-size: 16pt;
+    margin-right: 60px;
+    margin-left: 10px;
+}
+#tabela button{
+    border-radius: 50%;
+    border: 3px solid white;
+    outline-style: none;
+    font-weight: bold;
+    background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
+}
+#tabela button:hover {
+    background-color: rgba(0, 0, 0, .7);
+}
+/*FIM EDIÇÃO CORPO*/
+
+/* EDIÇÃO CORPO*/
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+/* FIM EDIÇÃO CORPO*/
