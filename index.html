@@ -7,7 +7,34 @@
         <title>Agenda particular</title>
     </head>
     <body>
-        
+        <header>
+            <h1>
+                <label for="textoentrada">Lista de fazeres</label>
+                <select name="listas" id="listas">
+                    <option>lista 01</option>
+                </select>
+                <button id="adicionarLista" onclick="salvarLista()">+</button>
+                <button id="excluirLista" onclick="excluirLista()">-</button>
+            </h1>
+        </header>
+        <section id="corpo">
+            <header>
+                <input type="text" id="textoentrada" placeholder="Digite uma tarefa...">
+                <button id="acaoentrada">Adicionar</button>
+            </header>
+            <section>
+                <table id="tabela">
+                    <tr>
+                        <th><input type="checkbox" id="check1" onclick="realizado(1)"></th>
+                        <th><p>Fazer trabalho</p></th>
+                        <th><button id="b1" onclick="excluir(1)">X</button></th>
+                    </tr>
+                </table>
+            </section>            
+        </section>
+        <footer>
+            Trabalho desenvolvido por Lucas Pires
+        </footer>
         <script src="script/script.js"></script>
     </body>
 </html>
