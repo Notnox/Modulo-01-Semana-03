@@ -7,15 +7,15 @@
         <title>Agenda particular</title>
     </head>
     <body>
-        <header>
-            <h1>
-                <label for="textoentrada">Lista de fazeres</label>
+        <header id="cabecalho">
+            <h1><label for="textoentrada">Lista de fazeres</label></h1>
+            <section>
                 <select name="listas" id="listas">
                     <option>lista 01</option>
                 </select>
-                <button id="adicionarLista" onclick="salvarLista()">+</button>
-                <button id="excluirLista" onclick="excluirLista()">-</button>
-            </h1>
+                <button id="adicionarLista" onclick="salvarLista()" title="Adicionar lista">+</button>
+                <button id="excluirLista" onclick="excluirLista()" title="Excluir lista">-</button>
+            </section>
         </header>
         <section id="corpo">
             <header>

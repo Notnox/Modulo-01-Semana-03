@@ -1,0 +1,43 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: lightgreen;
+}
+
+/* EDIÇÃO CABEÇALHO*/
+#cabecalho {
+    text-align: center;
+}
+
+#cabecalho h1 {
+    margin: 5px;
+    margin-top: 50px;
+}
+
+#listas {
+    width: 100px;
+    height: 30px;
+    text-align-last: center;
+    font-size: 16pt;
+    border: 2px ridge green;
+    outline-style: none;
+}
+
+#cabecalho button {
+    width: 30px;
+    height: 30px;
+    font-size: 16pt;
+    border: 2px ridge green;
+    outline-style: none;
+    background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
+}
+
+#cabecalho button:hover {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+/*FIM EDIÇÃO CABEÇALHO*/
