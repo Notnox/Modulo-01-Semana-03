@@ -65,7 +65,7 @@ body {
 #acaoentrada:hover {
     background-color: rgba(0, 0, 0, .7);
 }
-#corpo section {
+.tarefa {
     display: flex;
     justify-content: center;
     margin-top: 25px;
@@ -77,7 +77,7 @@ p {
     margin-right: 60px;
     margin-left: 10px;
 }
-#tabela button{
+.tarefa button{
     border-radius: 50%;
     border: 3px solid white;
     outline-style: none;
@@ -86,7 +86,7 @@ p {
     -webkit-transition: background-color 1s;
     -o-transition: background-color 1s;
 }
-#tabela button:hover {
+.tarefa button:hover {
     background-color: rgba(0, 0, 0, .7);
 }
 /*FIM EDIÇÃO CORPO*/

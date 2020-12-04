@@ -9,28 +9,13 @@
     <body>
         <header id="cabecalho">
             <h1><label for="textoentrada">Lista de fazeres</label></h1>
-            <section>
-                <select name="listas" id="listas">
-                    <option>lista 01</option>
-                </select>
-                <button id="adicionarLista" onclick="salvarLista()" title="Salvar lista">+</button>
-                <button id="excluirLista" onclick="excluirLista()" title="Excluir lista">-</button>
-            </section>
         </header>
         <section id="corpo">
             <header>
                 <input type="text" id="textoentrada" placeholder="Digite uma tarefa...">
                 <button id="acaoentrada" onclick="adicionar()">Adicionar</button>
             </header>
-            <section>
-                <table id="tabela">
-                    <tr>
-                        <th><input type="checkbox" id="check1" onclick="realizado(1)"></th>
-                        <th><label for="check1"><p>Fazer trabalho</p></label></th>
-                        <th><button id="b1" onclick="excluir(1)" title="Excluir tarefa">X</button></th>
-                    </tr>
-                </table>
-            </section>            
+            <section id="tarefas"></section>            
         </section>
         <footer>
             Trabalho desenvolvido por Lucas Pires
