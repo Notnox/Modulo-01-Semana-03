@@ -13,14 +13,14 @@
                 <select name="listas" id="listas">
                     <option>lista 01</option>
                 </select>
-                <button id="adicionarLista" onclick="salvarLista()" title="Adicionar lista">+</button>
+                <button id="adicionarLista" onclick="salvarLista()" title="Salvar lista">+</button>
                 <button id="excluirLista" onclick="excluirLista()" title="Excluir lista">-</button>
             </section>
         </header>
         <section id="corpo">
             <header>
                 <input type="text" id="textoentrada" placeholder="Digite uma tarefa...">
-                <button id="acaoentrada">Adicionar</button>
+                <button id="acaoentrada" onclick="adicionar()">Adicionar</button>
             </header>
             <section>
                 <table id="tabela">
