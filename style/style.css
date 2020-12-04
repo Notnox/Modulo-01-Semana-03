@@ -41,8 +41,8 @@ body {
     background-color: rgba(243, 243, 243,.8);
     margin: auto;
     margin-top: 40px;
-    padding: 15px;
     width: 30%;
+    padding: 15px;
     border-radius: 20px 0 20px 0;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, .7);
 }
@@ -68,18 +68,24 @@ body {
 .tarefa {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 25px;
     margin-bottom: 15px;
 }
 p {
     margin: 0;
-    font-size: 16pt;
     margin-right: 60px;
     margin-left: 10px;
+    font-size: 24pt;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .tarefa button{
     border-radius: 50%;
     border: 3px solid white;
+    font-size: 14pt;
     outline-style: none;
     font-weight: bold;
     background-color 1s;

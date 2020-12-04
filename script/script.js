@@ -29,6 +29,7 @@ function adicionar(){
 
     let tarefa = document.createElement('p')
     tarefa.setAttribute('id', vLabel)
+    tarefa.setAttribute('title', texto.value)
     tarefa.appendChild(tarefaTexto)
 
     let botao = document.createElement('button')
