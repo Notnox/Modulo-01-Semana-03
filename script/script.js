@@ -1,9 +1,33 @@
+if (localStorage.tarefasSalvas == undefined) {
+    iniciarLS()
+} else {
+    let listaTarefas = JSON.parse(localStorage['tarefasSalvas'])
+    if (listaTarefas.length > 0) {
+        let apagarListas = window.confirm('Você deseja carregar a lista salva?')
+
+        if (apagarListas){
+            localStorage.setItem('totalTarefas',1)
+            for (let t in listaTarefas){
+                criarLinhas(listaTarefas[t],'sim')
+            }
+        } else {
+            iniciarLS()
+        }
+    }
+}
+
 function adicionar(){
     let texto = window.document.querySelector('input#textoentrada')
 
     if (texto.value == ''){return window.alert('[ERRO] É necessário informar uma tarefa!')}
 
-    let tarefaTexto = document.createTextNode(texto.value)
+    criarLinhas(texto.value)
+
+    texto.value = ''
+}
+
+function criarLinhas(valorTexto,recarregar){
+    let tarefaTexto = document.createTextNode(valorTexto)
 
     if (localStorage.totalTarefas == undefined) {
         localStorage.setItem('totalTarefas',1)
@@ -29,7 +53,7 @@ function adicionar(){
 
     let tarefa = document.createElement('p')
     tarefa.setAttribute('id', vLabel)
-    tarefa.setAttribute('title', texto.value)
+    tarefa.setAttribute('title', valorTexto)
     tarefa.onclick = function (){exibirTarefa(vLabel)}
     tarefa.appendChild(tarefaTexto)
 
@@ -46,7 +70,22 @@ function adicionar(){
     linha.appendChild(tarefa)
     linha.appendChild(botao)
 
-    texto.value = ''
+    if (recarregar != 'sim'){
+        let listaTarefas = []
+        let ltarefas = JSON.parse(localStorage['tarefasSalvas'])
+        for (let n in ltarefas){
+            listaTarefas.push(ltarefas[n])
+        }
+
+        listaTarefas.push(valorTexto)
+        localStorage["tarefasSalvas"] = JSON.stringify(listaTarefas)
+    }
+}
+
+function iniciarLS(){
+    let listaTarefas = []
+    localStorage["tarefasSalvas"] = JSON.stringify(listaTarefas)
+    localStorage.setItem('totalTarefas',1)
 }
 
 function realizado(tarefa){
@@ -69,6 +108,17 @@ function excluir(linha,vLinha){
         let tarefa = window.document.querySelector('div#' + linha)
 
         tarefa.parentNode.removeChild(tarefa)
+
+        let listaTarefas = JSON.parse(localStorage['tarefasSalvas'])
+        for (let n in listaTarefas){
+        if (listaTarefas[n] == vTarefa.innerHTML){
+            var removerTarefa = listaTarefas.splice(n,1)
+     
+            localStorage.setItem('tarefasSalvas',JSON.stringify(listaTarefas));
+            return
+        }
+    }
+
     }
 }
 
