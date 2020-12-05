@@ -27,7 +27,6 @@ body {
     font-size: 16pt;
     border: 2px ridge green;
     outline-style: none;
-    background-color 1s;
     -webkit-transition: background-color 1s;
     -o-transition: background-color 1s;
 }
@@ -58,7 +57,6 @@ body {
     font-size: 18pt;
     border: 2px ridge white;
     outline-style: none;
-    background-color 1s;
     -webkit-transition: background-color 1s;
     -o-transition: background-color 1s;
 }
@@ -88,7 +86,6 @@ p {
     font-size: 14pt;
     outline-style: none;
     font-weight: bold;
-    background-color 1s;
     -webkit-transition: background-color 1s;
     -o-transition: background-color 1s;
 }
@@ -97,10 +94,147 @@ p {
 }
 /*FIM EDIÇÃO CORPO*/
 
-/* EDIÇÃO CORPO*/
+/* EDIÇÃO RODA-PÉ*/
 footer {
     text-align: center;
     margin-top: 30px;
     font-weight: bold;
 }
-/* FIM EDIÇÃO CORPO*/
+/* FIM EDIÇÃO RODA-PÉ*/
+
+/* RESPONSIVO*/
+@media (max-width: 1400px){
+    #textoentrada{
+        width: 220px;
+    }   
+}
+@media (max-width: 1200px){
+    #corpo {
+        width: 50%;
+    }
+}
+@media (max-width: 800px){
+    #corpo {
+        width: 70%;
+    }
+}
+@media (max-width: 540px){
+    #corpo {
+        width: 90%;
+    }
+    #textoentrada, #acaoentrada {
+        font-size: 15pt;
+    }
+    p{
+        font-size: 21pt;
+        width: 170px;
+    }
+}
+@media (max-width: 375px){
+    #corpo {
+        width: 80%;
+    }
+    #textoentrada, #acaoentrada {
+        font-size: 18pt;
+        margin-bottom: 15px;
+    }
+    #textoentrada{
+        width: 220px;
+    }    
+    p{
+        font-size: 16pt;
+        width: 120px;
+    }
+}
+@media (max-width: 300px){
+    #corpo {
+        width: 80%;
+    }
+    #textoentrada, #acaoentrada {
+        font-size: 16pt;
+        margin-bottom: 15px;
+    }
+    #textoentrada{
+        width: 200px;
+    }    
+    p{
+        font-size: 16pt;
+        width: 100px;
+    }
+}
+@media (max-width: 250px){
+    input {
+        width: 10px;
+    }
+    h1{
+        font-size: 15pt;
+        margin: 0;
+        padding: 0;
+    }
+    footer{
+        font-size: 6pt;
+    }
+    #corpo {
+        width: 60%;
+        padding: 3px;
+        border-radius: 0;
+    }
+    #textoentrada, #acaoentrada {
+        font-size: 8pt;
+        margin-bottom: 10px;
+    }
+    #textoentrada{
+        width: 70%;
+    }    
+    p {  
+        font-size: 2pt;
+        width: 10px;
+        margin-right: 30px;
+        margin-left: 10px;
+    }
+    .tarefa button{
+        font-size: 6pt;
+        border: 1px solid white;
+        padding: 0;
+        margin: 0;
+    }
+}
+@media (max-width: 150px){
+    input {
+        width: 8px;
+    }
+    h1{
+        font-size: 8pt;
+        margin: 0;
+        padding: 0;
+    }
+    footer{
+        font-size: 3pt;
+    }
+    #corpo {
+        width: 30px;
+        padding: 3px;
+        border-radius: 0;
+    }
+    #textoentrada, #acaoentrada {
+        font-size: 2pt;
+        margin-bottom: -5px;
+    }
+    #textoentrada{
+        width: 20px;
+    }    
+    p {  
+        font-size: 2pt;
+        width: 10px;
+        margin-right: 6px;
+        margin-left: 1px;
+    }
+    .tarefa button{
+        font-size: 2pt;
+        width: 5px;
+        height: 5px;
+        border: 1px solid white;
+        padding: 0;
+        margin: 0;
+    }
+}
