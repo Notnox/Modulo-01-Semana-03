@@ -50,6 +50,18 @@ function criarLinhas(valorTexto,recarregar){
     check.setAttribute('type', 'checkbox')
     check.setAttribute('id', 'ch'+ vLabel)
     check.onclick = function (){realizado(vLabel)}
+    if (recarregar == 'sim') {
+        let listaTarefas = JSON.parse(localStorage['tarefasSalvas'])
+        let tarefasCheck = JSON.parse(localStorage['tarefasConcluidas'])
+
+        for (let n = 0; n < listaTarefas.length;n++){
+            if (listaTarefas[n] == valorTexto){
+                if (tarefasCheck[n] == 'true'){
+                    check.setAttribute('checked', 'checked')
+                }
+            }
+        }
+    }
 
     let tarefa = document.createElement('p')
     tarefa.setAttribute('id', vLabel)
@@ -79,24 +91,53 @@ function criarLinhas(valorTexto,recarregar){
 
         listaTarefas.push(valorTexto)
         localStorage["tarefasSalvas"] = JSON.stringify(listaTarefas)
+
+        let tarefasCheck = JSON.parse(localStorage['tarefasConcluidas'])
+        tarefasCheck.push('false')
+        localStorage["tarefasConcluidas"] = JSON.stringify(tarefasCheck)
+    } else {
+        realizado(vLabel)
     }
 }
 
 function iniciarLS(){
     let listaTarefas = []
+    let tarefasCheck = []
     localStorage["tarefasSalvas"] = JSON.stringify(listaTarefas)
+    localStorage["tarefasConcluidas"] = JSON.stringify(tarefasCheck)
     localStorage.setItem('totalTarefas',1)
 }
 
 function realizado(tarefa){
     let feito = window.document.querySelector('input#' + 'ch' + tarefa)
     let vtarefa = window.document.querySelector('p#' + tarefa)
-    
+    let auxiliar = false
+
+
     if (feito.checked == true){
         vtarefa.style = "text-decoration: line-through 4px"
+        auxiliar = true
     } else {
         vtarefa.style = "text-decoration: none"
+        auxiliar = false
     }
+
+    let listaTarefas = JSON.parse(localStorage['tarefasSalvas'])
+    let tarefasCheck = JSON.parse(localStorage['tarefasConcluidas'])
+    let auxiliarTarefa = []
+
+    for (let n = 0; n < listaTarefas.length;n++){
+        if (listaTarefas[n] == vtarefa.innerHTML){
+            if (auxiliar) {
+                auxiliarTarefa.push('true')
+            } else {
+                auxiliarTarefa.push('false')
+            }
+        } else {
+            auxiliarTarefa.push(tarefasCheck[n])
+        }
+    }
+    localStorage["tarefasConcluidas"] = JSON.stringify(auxiliarTarefa)
 }
 
 function excluir(linha,vLinha){
@@ -110,11 +151,15 @@ function excluir(linha,vLinha){
         tarefa.parentNode.removeChild(tarefa)
 
         let listaTarefas = JSON.parse(localStorage['tarefasSalvas'])
+        let tarefasCheck = JSON.parse(localStorage['tarefasConcluidas'])
+
         for (let n in listaTarefas){
         if (listaTarefas[n] == vTarefa.innerHTML){
-            var removerTarefa = listaTarefas.splice(n,1)
-     
-            localStorage.setItem('tarefasSalvas',JSON.stringify(listaTarefas));
+            listaTarefas.splice(n,1)
+            tarefasCheck.splice(n,1)
+
+            localStorage.setItem('tarefasSalvas',JSON.stringify(listaTarefas))
+            localStorage.setItem('tarefasConcluidas',JSON.stringify(tarefasCheck))
             return
         }
     }
@@ -122,7 +167,7 @@ function excluir(linha,vLinha){
     }
 }
 
-function exibirTarefa(tarefa){
+function exibirTarefa(tarefa) {
     let vtarefa = window.document.querySelector('p#' + tarefa)
     window.alert(vtarefa.innerHTML)
 }   
