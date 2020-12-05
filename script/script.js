@@ -30,6 +30,7 @@ function adicionar(){
     let tarefa = document.createElement('p')
     tarefa.setAttribute('id', vLabel)
     tarefa.setAttribute('title', texto.value)
+    tarefa.onclick = function (){exibirTarefa(vLabel)}
     tarefa.appendChild(tarefaTexto)
 
     let botao = document.createElement('button')
@@ -70,3 +71,8 @@ function excluir(linha,vLinha){
         tarefa.parentNode.removeChild(tarefa)
     }
 }
+
+function exibirTarefa(tarefa){
+    let vtarefa = window.document.querySelector('p#' + tarefa)
+    window.alert(vtarefa.innerHTML)
+}   
